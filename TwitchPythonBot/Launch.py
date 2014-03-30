@@ -21,7 +21,7 @@ import string
 import time
 import socket
 from threading import Thread
-import win32com.client, win32api, win32con
+import  win32api, win32con, win32com.client
 
 settings = []
 commands = []
@@ -29,6 +29,8 @@ readbuffer = ""
 GAME = os.listdir('game')[0]
 shell = win32com.client.Dispatch("WScript.Shell")
 
+
+#Virtual Key Code mapping
 VK_CODE = {'backspace':0x08,
                     'tab':0x09,
                     'clear':0x0C,
@@ -176,6 +178,7 @@ VK_CODE = {'backspace':0x08,
                     "'":0xDE,
                     '`':0xC0}
 
+#Press Function takes key and applied key mapping
 def press(*args):
     '''
     press, release
@@ -188,7 +191,8 @@ def press(*args):
         if QUICK_PRESS == True:
             time.sleep(.01)
         win32api.keybd_event(VK_CODE[i],0 ,win32con.KEYEVENTF_KEYUP ,0)
-        
+
+#T
 def addtofile():
     if len(commands) >= command_length:
         del commands[0]
@@ -200,6 +204,7 @@ def addtofile():
         if mode.lower() == "democracy":
             list_commands.extend([out.lower()])
 
+#Starts the emulator
 def startemulator():
     if os.path.splitext(os.listdir('game')[0])[1] != ".sav":
         os.system('"%s\game\%s"' % (os.getcwd(), GAME))
