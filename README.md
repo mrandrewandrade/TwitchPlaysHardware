@@ -19,31 +19,27 @@ Please note, this uses the PyWin32 and PySerial which requires the 32 bit versio
 - **Pyserial 2.7** https://pypi.python.org/packages/any/p/pyserial/pyserial-2.7.win32_py3k.exe#md5=c6fb580ae7763671297794b8a1d91c9e
 
 
-- [**Download**]
 
-Keybindings for Visual Boy Advance (turn numb-lock on):
+To play via stream just type the comands in the chat!:
  
-	A:			z
-	B:			x
-	Start: 		enter
-	Select:		backspace
-	Up: 		Numpad 8
-	Right: 		Numpad 6
-	Down: 		Numpad 2
-	Left: 		Numpad 4
+	A:			a
+	B:			b
+	X:			x
+	Y:			y
+	Up: 		up
+	Right: 		right
+	Down: 		down
+	Left: 		left
 
 ### How to use ###
 
-- Put your .gbc (game file) into the game folder
+
 - Remove the text document from the game folder
 - Double click on Launch.py
 - The bot will walk you through first-time configuration
 
-Still having trouble? Check out the [How-To Video](http://youtu.be/LvBU9SJ8sfE)
 
 ### My Channel ###
 
-- My channel will be available [**here**](http://www.twitch.tv/twitchplaysgameboyadvance "Twitch Plays Gameboy Advance")
-- On my channel I have the following internet speeds on a dedicated server (*tested while streaming*):
-![Server Speeds](http://i.imgur.com/VSKyN7f.png)
-- I truly believe it will have the least amount of delay possible, you can use it as a benchmark
+- My channel will be available [**here**](http://www.twitch.tv/twitchplayshardware"Twitch Plays 
+-There is about a 30 second lag at the hackathon.  The wireless internet is terrible here.
