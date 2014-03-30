@@ -1,10 +1,13 @@
-# Twitch Plays Pokemon bot #
+# Twitch Plays Hardware #
 
-**v0.2** more user friendly than ever.
+**v0.0** Built at Hack Into The BemyApp Factory
+
 
 ### Built for Windows, written in Python 3 ###
 
-My goal with this project is to create the same program the Twitch channel "Twitch Plays Pokemon" uses, I'm about there!
+My goal with this project is to take the open source clone of the program Twitch channel "Twitch Plays Pokemon" uses, and abstract it such a way we can control hardware.  Basically control hardware via IRC on a Twitch Channel.
+
+For the hackathon we created a method to control a Nintendo3Ds via Arduino.
 
 ### Pre requisists: ###
 
