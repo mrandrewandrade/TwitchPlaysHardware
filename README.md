@@ -3,19 +3,23 @@
 **v0.0** Built at Hack Into The BemyApp Factory
 
 
-### Built for Windows, written in Python 3 ###
+### Built for Windows, written in Python 3 32 BIT###
 
-My goal with this project is to take the open source clone of the program Twitch channel "Twitch Plays Pokemon" uses, and abstract it such a way we can control hardware.  Basically control hardware via IRC on a Twitch Channel.
+The goal of this project is to control hardware via IRC on a Twitch.tv Channel.  It takes the open source clone of the program Twitch channel "Twitch Plays Pokemon" uses and abstract it such a way we can control hardware.
 
 For the hackathon we created a method to control a Nintendo3Ds via Arduino.
 
-### Pre requisists: ###
+### Prerequisists: ###
 
-- **Python 3.3.4** [64 bit](http://www.python.org/ftp/python/3.3.4/python-3.3.4.amd64.msi "64 bit") / [32 bit](http://www.python.org/ftp/python/3.3.4/python-3.3.4.msi "32 bit")
-- **PyWin32** [64 bit](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win-amd64-py3.3.exe/download "64 bit") / [32 bit](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win32-py3.3.exe/download "32 bit")
+Please note, this uses the PyWin32 and PySerial which requires the 32 bit version of Python 3.  This will not work on any operating system other than windows.
+
+- **Python 3.3.4** [64 bit] [32 bit](http://www.python.org/ftp/python/3.3.4/python-3.3.4.msi "32 bit")
+- **PyWin32**  [32 bit](http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/pywin32-218.win32-py3.3.exe/download "32 bit")
 - *If you have any dll related issues make sure you're using the right version!*
-- [**VisualBoyAdvance**](http://coolrom.com/emulators/gba/14/Visual_Boy_Advance.php "VBA")  Set gbc files to open with this by default
-- [**Download**](https://github.com/sunshinekitty5/TwitchPlaysPokemon/archive/master/twitchplayspokemon.zip "Twitch Plays Pokemon") and extract the bot
+- **Pyserial 2.7** https://pypi.python.org/packages/any/p/pyserial/pyserial-2.7.win32_py3k.exe#md5=c6fb580ae7763671297794b8a1d91c9e
+
+
+- [**Download**]
 
 Keybindings for Visual Boy Advance (turn numb-lock on):
  
