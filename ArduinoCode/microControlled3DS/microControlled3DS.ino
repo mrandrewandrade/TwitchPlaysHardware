@@ -16,8 +16,7 @@ enum pinMap  {
   START_PIN = 34,
 };
   
-//Set global INPUT voltage constant
-const int DS_VOLTAGE = INPUT; //92 corresponds to 1.81V
+
 
 /******Setup method****************************
 Description: standard arduino method for initial setup
@@ -32,20 +31,17 @@ void setup()
     // sanity check, print ready back through serial
   Serial.println("Ready"); 
  
-  //Setting pins to default to input voltage
-  //to trick the 3DS into thinking everthing
-  //is normal (simulate voltage present)
-  //Note: analogRead values go from 0 to 1023, pinMode values from 0 to 255 
-  pinMode(LEFT_PIN, DS_VOLTAGE);  
-  pinMode(RIGHT_PIN, DS_VOLTAGE);
-  pinMode(UP_PIN, DS_VOLTAGE);
-  pinMode(DOWN_PIN, DS_VOLTAGE);
-  pinMode(B_PIN, DS_VOLTAGE);
-  pinMode(X_PIN, DS_VOLTAGE);
-  pinMode(Y_PIN, DS_VOLTAGE);
-  pinMode(HOME_PIN, DS_VOLTAGE);
-  pinMode(SELECT_PIN, DS_VOLTAGE);
-  pinMode(START_PIN, DS_VOLTAGE);
+  //Setting pins to INPUT spoof a 100 MOhm resistor
+  pinMode(LEFT_PIN, INPUT);  
+  pinMode(RIGHT_PIN, INPUT);
+  pinMode(UP_PIN, INPUT);
+  pinMode(DOWN_PIN, INPUT);
+  pinMode(B_PIN, INPUT);
+  pinMode(X_PIN, INPUT);
+  pinMode(Y_PIN, INPUT);
+  pinMode(HOME_PIN, INPUT);
+  pinMode(SELECT_PIN, INPUT);
+  pinMode(START_PIN, INPUT);
 }
 
 /******buttonPress method****************************

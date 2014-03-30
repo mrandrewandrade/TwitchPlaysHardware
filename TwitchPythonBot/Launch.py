@@ -23,6 +23,17 @@ import socket
 from threading import Thread
 import  win32api, win32con, win32com.client
 
+from time import sleep
+import serial
+
+#TODO: scan for arduino port
+# Establish the connection on a specific port, change to correct port
+ser = serial.Serial('COM4', 9600) 
+time.sleep(2)
+
+#Reads status from arduino
+print (ser.readline())
+
 settings = []
 commands = []
 readbuffer = ""
@@ -258,6 +269,7 @@ def democracy():
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('up_arrow')
+                
             if selected_c.lower() == 'right':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
@@ -447,41 +459,57 @@ if mode.lower() == "anarchy":
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('up_arrow')
+                ser.write( ('U').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'right':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('right_arrow')
+                ser.write( ('R').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'down':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('down_arrow')
+                ser.write( ('D').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'left':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('left_arrow')
+                ser.write( ('L').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'a':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('z')
+                ser.write( ('A').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'b':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('x')
+                ser.write( ('B').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'start':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('enter')
+                ser.write( ('S').encode())
+                print (ser.readline()) 
                 addtofile()
             if out.lower() == 'select':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('backspace')
+                ser.write( ('E').encode())
+                print (ser.readline()) 
                 addtofile()
                 
             # Write to file for stream view
