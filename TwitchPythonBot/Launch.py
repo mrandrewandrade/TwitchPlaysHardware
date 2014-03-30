@@ -31,7 +31,8 @@ shell = win32com.client.Dispatch("WScript.Shell")
 
 
 #Virtual Key Code mapping
-VK_CODE = {'backspace':0x08,
+VK_CODE = {
+                    'backspace':0x08,
                     'tab':0x09,
                     'clear':0x0C,
                     'enter':0x0D,
@@ -176,7 +177,8 @@ VK_CODE = {'backspace':0x08,
                     '\\':0xDC,
                     ']':0xDD,
                     "'":0xDE,
-                    '`':0xC0}
+                    '`':0xC0
+    }
 
 #Press Function takes key and applied key mapping
 def press(*args):
@@ -192,7 +194,7 @@ def press(*args):
             time.sleep(.01)
         win32api.keybd_event(VK_CODE[i],0 ,win32con.KEYEVENTF_KEYUP ,0)
 
-#T
+
 def addtofile():
     if len(commands) >= command_length:
         del commands[0]
