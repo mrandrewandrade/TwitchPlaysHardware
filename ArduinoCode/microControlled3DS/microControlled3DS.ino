@@ -15,19 +15,6 @@ enum pinMap  {
   SELECT_PIN = 36,
   START_PIN = 34,
 };
-//creating a single character alias
-//to use with serial commands
-  #define L LEFT_PIN
-  #define R RIGHT_PIN
-  #define U UP_PIN
-  #define D DOWN_PIN
-  #define A A_PIN
-  #define B B_PIN
-  #define X X_PIN
-  #define Y Y_PIN
-  #define H HOME_PIN
-  #define E SELECT_IN
-  #define S START_PIN
   
 //Set global INPUT voltage constant
 const int DS_VOLTAGE = INPUT; //92 corresponds to 1.81V
