@@ -1,4 +1,16 @@
+//microController3DS.ino
+//Simple that takes commands from serial and write to pins
+//Used to controlled a Nintendo3DS using twitch.tv stream IRC
+//Copyright (C) 2014 : Andrew Andrade
+// This program is free software; you can redistribute it and/or modify
+//it under the terms of the GNU General Public License as published by
+//the Free Software Foundation; either version 3 of the License, or
+//(at your option) any later version.
 
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//GNU General Public License for more details.
 /******Pin Mapping**********************************
 ***************************************************/
 //Pin map stucture to location of pins
