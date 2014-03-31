@@ -6,13 +6,13 @@ Won best use of Arduino platform :)
 
 For the hackathon we created a method to control a Nintendo3Ds via Internet Relay Chat.  The code was written Hackathon Style and was a fork of clone of the program Twitch channel "Twitch Plays Pokemon" uses and abstracts it in such a way we can control hardware.
 
-This is both an opensourced hardware and software hackathon and we are providing everything you need to get started.  A big part of learning is trying to figure things out and understand how they work.  If you are having trouble, try the [twitch plays pokemon project](https://github.com/sunshinekitty5/TwitchPlaysPokemon) using an emulator.  Once you can play Pokemon through the emulator, then you can move on to using a DS.
+This is both an opensourced hardware and softare hackathon and we are providing everything you need to get started.  A big part of learning is trying to figure things out and understand how they work.  If you are having trouble, try the [twitch plays pokemon project](https://github.com/sunshinekitty5/TwitchPlaysPokemon) using an emulator.  Once you can play Pokemon through the emulator, then you can move on to using a DS.
 
-#### Please see the hackster.io [project page](http://www.hackster.io/392/twitchplayshardware "Project Page") for full documentation including how to hack that 3DS and set up hardware!  ####
+#### Please see the hackster.io [project page](http://www.hackster.io/392/twitchplayshardware "Project Page") for full documention including how to hack that 3DS and set up hardware!  ### 
 
 ## Software Documentation ##
 
-The software implementation is a fork of TwitchPlaysPokemon clone and provides implementation for both use for windows applications like an emulator, as well as to write to arduino via serial.  The current implementation uses arduino, but similar methods can be used for other hardware devices.
+The softare implemention is a fork of TwitchPlaysPokemon clone and provides implmentations for both use for windows applications like an emulator, as well as to write to arduino via serial.  The current implemention uses arduino, but similar methods can be used for other hardware devices.
 
 The currently hardware and network stack is the following:
 
@@ -28,7 +28,7 @@ The Nintendo 3DS is streamed via webcam to the computer running Python.
 
 ## Built for Windows, written in Python 3 32 BITv##
 
-### Prerequisites: ###
+### Prerequisists: ###
 
 Please note, this uses the PyWin32 and PySerial which requires the 32 bit version of Python 3.  This will not work on any operating system other than windows.
 
@@ -54,7 +54,7 @@ Please note, this uses the PyWin32 and PySerial which requires the 32 bit versio
 - For the sake of flexibility, the file in /game/ will open and is set at notepad as default.
 - If you set things up right, the Python script should sniff the steam and send the commands to Arduino
 
-To get people to play via stream just type the commands in the chat:
+To get people to play via stream just type the comands in the chat:
  
     A:    		a
 	B:			b
