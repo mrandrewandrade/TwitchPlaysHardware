@@ -1,11 +1,11 @@
-//microController3DS.ino
-//Simple that takes commands from serial and write to pins
-//Used to controlled a Nintendo3DS using twitch.tv stream IRC
-//Copyright (C) 2014 : Andrew Andrade
+// microController3DS.ino
+// Simple that takes commands from serial and write to pins
+// Used to controlled a Nintendo3DS using twitch.tv stream IRC
+// Copyright (C) 2014 : Andrew Andrade
 // This program is free software; you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation; either version 3 of the License, or
-//(at your option) any later version.
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
 
 //This program is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -13,12 +13,14 @@
 //GNU General Public License for more details.
 /******Pin Mapping**********************************
 ***************************************************/
-//Pin map stucture to location of pins
+// Pin map stucture to location of pins
+// LED connected to digital pin 9
+// TODO: Change these pin numbers to match hardware
 enum pinMap  {
-  LEFT_PIN = 24,      // LED connected to digital pin 9
+  LEFT_PIN = 24,
   RIGHT_PIN = 26,
   UP_PIN = 30,
-  DOWN_PIN =28,
+  DOWN_PIN = 28,
   A_PIN = 40,
   B_PIN = 38,
   X_PIN = 42,
@@ -29,12 +31,11 @@ enum pinMap  {
 };
   
 
-
 /******Setup method****************************
 Description: standard arduino method for initial setup
 Sets the serial ports and standard pin voltage
 ***************************************************/
-//setup method: 
+// setup method: 
 void setup()
 {
   // set standard baud rate
@@ -43,7 +44,7 @@ void setup()
     // sanity check, print ready back through serial
   Serial.println("Ready"); 
  
-  //Setting pins to INPUT spoof a 100 MOhm resistor
+  // Setting pins to INPUT spoof a 100 MOhm resistor
   pinMode(LEFT_PIN, INPUT);  
   pinMode(RIGHT_PIN, INPUT);
   pinMode(UP_PIN, INPUT);
@@ -59,80 +60,79 @@ void setup()
 /******buttonPress method****************************
 Description: buttonPress takes a button location 
 and sends a button press simulation signal to the nintendoDS
-@Param a_nButton: pin number of button to press
-@Patam a_uNuPresses: number of presses of button
+@Param a_unButton: pin number of button to press
+@Param a_ucNuPresses: number of presses of button
 ***************************************************/
 boolean buttonPress (unsigned int a_unButton, unsigned char a_ucNumPresses) {
 
   for (int iii = 1; iii <= a_ucNumPresses; iii++)  {
-    //set specific pin to output voltage
-    pinMode(a_unButton,OUTPUT);
+    // set specific pin to output voltage
+    pinMode(a_unButton, OUTPUT);
     
-    //write pin low to simulate pressing
+    // write pin low to simulate pressing
     digitalWrite(a_unButton, LOW);
     delay(100);
 
-    //reset pin back to input voltage
-    pinMode(a_unButton,INPUT);   
+    // reset pin back to input voltage
+    pinMode(a_unButton, INPUT);   
     delay(250);
   } 
   return true;
 }
 
 /******validButtonPush method****************************
-Description: takes in push command and calls press if valie
+Description: takes in push command and calls press if valid
 and sends press simulation to the nintendoDS
 @Param a_cButton: pin number of button to press
-@Patam a_numberPresses: number of presses of button
-***************************************************///Description: isValidButon check if the command is a
-//@Param a_nButton: pin numa_nButtonber of button to press
+***************************************************/
+// TODO: Implement - @Param a_numberPresses: number of presses of button
 unsigned int ifValidButtonPush (char a_cButton) {
-  //defaul it will press button
+  // Sucess status of button press
   boolean bPressStatus = true;
   
   switch (a_cButton){
       case 'L':
-            buttonPress( LEFT_PIN,1);
+            buttonPress(LEFT_PIN, 1);
       break;
         
       case 'R':
-            buttonPress(RIGHT_PIN,1);
+            buttonPress(RIGHT_PIN, 1);
       break;
 
       case 'U':
-            buttonPress( UP_PIN,1);
+            buttonPress(UP_PIN, 1);
       break;
       
       case 'D':
-            buttonPress( DOWN_PIN,1);
+            buttonPress(DOWN_PIN, 1);
       break;
 
       case 'A':
-            buttonPress(A_PIN ,1);
+            buttonPress(A_PIN, 1);
       break;
       
       case 'B':
-            buttonPress(B_PIN ,1);
+            buttonPress(B_PIN, 1);
       break;
       
       case 'X':
-            buttonPress(X_PIN ,1);
+            buttonPress(X_PIN, 1);
       break;
 
       case 'Y':
-              buttonPress(Y_PIN ,1);
+            buttonPress(Y_PIN, 1);
       break;
       
       case 'H':
-            buttonPress( HOME_PIN,1);
+            buttonPress(HOME_PIN, 1);
       break;
       
       case 'E':
-            buttonPress( SELECT_PIN,1);
+            buttonPress(SELECT_PIN, 1);
       break;
       
       case 'S':
-            buttonPress( START_PIN,1);
+            buttonPress(START_PIN, 1);
       break;
       default:
             bPressStatus = false;
@@ -141,25 +141,25 @@ unsigned int ifValidButtonPush (char a_cButton) {
   return bPressStatus;
 }
 
-//Program's main loop
-//Loop scanning for commands. Read commands,
-//verify if they are buttons and simulation pressing on DS
+// Program's main loop
+// Loop scanning for commands. Read commands,
+// verify if they are buttons and simulation pressing on DS
 void loop()
 {
-    //variable to store command from IRC
+    // Variable to store command from IRC
     char cInputCommand = ' ';
 
     // Ensure serial is not busy (checks if data has been sent before reading again)
     if(Serial.available()){ 
       
-      // read the incoming data
+      // Read the incoming data
       cInputCommand = Serial.read(); 
       
-      //send command to push button
-      ifValidButtonPush (cInputCommand);
+      // Send command to push button
+      ifValidButtonPush(cInputCommand);
 
-      //TODO: Is this even necessary?
-      //send the command back in a new line so that it is not all one long line
+      // TODO: Is this even necessary?
+      // send the command back in a new line so that it is not all one long line
       Serial.println(cInputCommand); 
     }
     delay(100); // delay for 1/10 of a second
