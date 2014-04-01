@@ -1,11 +1,11 @@
-//microController3DS.ino
-//Simple that takes commands from serial and write to pins
-//Used to controlled a Nintendo3DS using twitch.tv stream IRC
-//Copyright (C) 2014 : Andrew Andrade
+// microController3DS.ino
+// Simple that takes commands from serial and write to pins
+// Used to controlled a Nintendo3DS using twitch.tv stream IRC
+// Copyright (C) 2014 : Andrew Andrade
 // This program is free software; you can redistribute it and/or modify
-//it under the terms of the GNU General Public License as published by
-//the Free Software Foundation; either version 3 of the License, or
-//(at your option) any later version.
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
 
 //This program is distributed in the hope that it will be useful,
 //but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,17 +16,19 @@
 // Pin map stucture to location of pins
 // LED connected to digital pin 9
 // TODO: Change these pin numbers to match hardware
-#define LEFT_PIN   24      
-#define RIGHT_PIN  26
-#define UP_PIN     30
-#define DOWN_PIN   28
-#define A_PIN      40
-#define B_PIN      38
-#define X_PIN      42
-#define Y_PIN      44
-#define HOME_PIN   32
-#define SELECT_PIN 36
-#define START_PIN  34
+enum pinMap  {
+  LEFT_PIN = 24,
+  RIGHT_PIN = 26,
+  UP_PIN = 30,
+  DOWN_PIN = 28,
+  A_PIN = 40,
+  B_PIN = 38,
+  X_PIN = 42,
+  Y_PIN = 44,
+  HOME_PIN = 32,
+  SELECT_PIN = 36,
+  START_PIN = 34,
+};
   
 
 /******Setup method****************************
